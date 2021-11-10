@@ -31,7 +31,7 @@ const Home = () => {
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="https://presale.dftoken.net/">Presale</a>
+                                    <a className="nav-link" href="https://presale.dftoken.net/">Pre-sale</a>
                                 </li>
 
                                 <li className="nav-item">
