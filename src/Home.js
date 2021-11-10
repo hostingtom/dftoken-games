@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './styles/Home.css'
-import Tetris from "./image/tetris-brick.jpg";
+import Magic from "./image/magic-touch-logo.png";
 import Logo from "./image/Shared-Image.png";
 import Welcome from "./modal/Welcome";
 import Modal from "./modal/Modal";
@@ -61,7 +61,7 @@ const Home = () => {
                                 <div className="col-lg-3 col-md-4 col-6">
                                     <div className="card">
                                         <div className="card-img-top">
-                                            <img src={Tetris} alt="" className="img-fluid" />
+                                            <img src={Magic} alt="" className="img-fluid" />
                                         </div>
                                         <div className="card-body">
                                             <p className="name">Name: <span className="light"> Magic Match</span></p>

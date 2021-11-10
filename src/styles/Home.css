@@ -13,7 +13,7 @@
     color: #ffff;
 }
 .main-bg{
-    background-image: url("../image/main-bg.jpg");
+    background-image: url("../image/mars-bg.jpg");
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -259,7 +259,7 @@
 @media only screen and (max-width: 992px) {
 
     .main-bg{
-        background: url("../image/background-main-992px.jpg");
+        background: url("../image/mars-bg.jpg");
         background-size: cover;
         width: 100%;
         height: 100vh;
@@ -391,7 +391,7 @@
 @media only screen and (max-width: 600px) {
 
     .main-bg{
-        background: url("../image/background-main-600px.jpg");
+        background: url("../image/mars-bg.jpg");
         background-size: cover;
         width: 100%;
         height: 100vh;

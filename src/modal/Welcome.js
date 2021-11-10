@@ -22,24 +22,53 @@ const Welcome = ({history}) => {
             else{
                 try{
                     const bsc = address.value;
-                    const walletInfo = {
-                        balance:10,
-                        withdraw: "",
-                        request: false,
-                        walletAddress: bsc,
-                    };
-
                     await
                     db.collection("users")
-                        .doc(bsc)
-                        .set(walletInfo)
-                        .then(() => {
-                            console.log("stored")
-                            history.push("/Game");
+                        .doc(address.value)
+                        .get()
+                        .then((documentSnapshot) => {
+                            if(documentSnapshot.exists){
+                                console.log("registered")
+
+                                const walletInfo = {
+                                    balance: documentSnapshot.data().balance +2,
+                                    request: false,
+                                    walletAddress: bsc,
+                                };
+                                db.collection("users")
+                                    .doc(bsc)
+                                    .update(walletInfo)
+                                    .then(() => {
+                                        console.log("Updated")
+                                        history.push({
+                                            pathname: "/Game",
+                                            state: bsc,
+                                        });
+                                    })
+                                    .catch((err) => {
+                                        console.error(err);
+                                    });
+                            }
+                            else{
+                                console.log("not registered")
+                                const walletInfo = {
+                                    balance: 10,
+                                    withdraw: "",
+                                    request: false,
+                                    walletAddress: bsc,
+                                };
+                                db.collection("users")
+                                    .doc(bsc)
+                                    .set(walletInfo)
+                                    .then(() => {
+                                        console.log("stored")
+                                        history.push("/Game");
+                                    })
+                                    .catch((err) => {
+                                        console.error(err);
+                                    });
+                            }
                         })
-                        .catch((err) => {
-                            console.error(err);
-                        });
 
                      console.log(address.value)
 
