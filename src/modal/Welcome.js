@@ -39,7 +39,7 @@ const Welcome = ({history}) => {
                                     .doc(bsc)
                                     .update(walletInfo)
                                     .then(() => {
-                                        console.log("Updated")
+                                        //console.log("Updated")
                                         history.push({
                                             pathname: "/Game",
                                             state: bsc,
@@ -50,7 +50,7 @@ const Welcome = ({history}) => {
                                     });
                             }
                             else{
-                                console.log("not registered")
+                                //console.log("not registered")
                                 const walletInfo = {
                                     balance: 10,
                                     withdraw: "",
@@ -61,8 +61,11 @@ const Welcome = ({history}) => {
                                     .doc(bsc)
                                     .set(walletInfo)
                                     .then(() => {
-                                        console.log("stored")
-                                        history.push("/Game");
+                                        //console.log("stored")
+                                        history.push({
+                                            pathname: "/Game",
+                                            state: bsc,
+                                        });
                                     })
                                     .catch((err) => {
                                         console.error(err);
