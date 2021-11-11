@@ -18,7 +18,7 @@ function Puzzle(){
     }
     return(
         <div className="Puzzle">
-            <h1> React Sliding Puzzle</h1>
+            <h1> Dragon Sliding Puzzle</h1>
             <Board imgUrl={imgUrl}/>
             <input value={imgUrl} onChange={handleImageChange} />
         </div>
